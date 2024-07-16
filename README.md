@@ -1,3 +1,5 @@
+THIS IS A FORK CREATED JUST WITH UPDATED VERSION OF gradle-git-properties plugin.
+
 # Build Info generator Gradle plugin for Spring Boot Actuator
 
 This gradle plugin generates properties file(s) that can be consumed by [Spring Boot Actuator Info endpoint](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-application-info)
