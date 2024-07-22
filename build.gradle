@@ -17,7 +17,8 @@
 plugins {
   id 'groovy'
   id 'maven-publish'
-  id 'com.gradle.plugin-publish' version '0.10.1'
+  id 'com.gradle.plugin-publish' version '1.2.1'
+  id 'java-gradle-plugin'
 }
 
 repositories {
@@ -27,38 +28,30 @@ repositories {
 dependencies {
   implementation gradleApi()
   implementation localGroovy()
-  implementation 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:2.4.2'
+  implementation 'com.gorylenko.gradle-git-properties:gradle-git-properties:2.4.2'
 }
 
-group = 'com.pasam.gradle.buildinfo'
-version = '0.1.4'
+group = 'io.github.KaustubhKhati'
+version = '0.1.3'
 
-targetCompatibility = '1.8'
-sourceCompatibility = '1.8'
+sourceCompatibility = JavaVersion.toVersion("11")
+targetCompatibility = JavaVersion.toVersion("11")
 
-publishing {
-  publications {
-    pluginPublication (MavenPublication) {
-      groupId project.group
-      artifactId 'spring-boot-build-info'
-      version project.version
-
-      from components.java
+gradlePlugin {
+  // Define the plugin
+  plugins {
+    buildInfo {
+      description = 'Plugin generates properties file that can be consumed by Spring Boot Actuator Info endpoint'
+      displayName = 'Build Info generator plugin for Spring Boot Actuator with updated dependency'
+      id = 'io.github.KaustubhKhati.buildinfo'
+      implementationClass = 'com.tesco.customerorder.common.buildinfo.BuildInfoPlugin'
     }
   }
 }
 
 pluginBundle {
-  website = 'https://github.com/spasam/spring-boot-build-info'
-  vcsUrl = 'https://github.com/spasam/spring-boot-build-info'
+  website = 'https://github.com/KaustubhKhati/spring-boot-build-info'
+  vcsUrl = 'https://github.com/KaustubhKhati/spring-boot-build-info'
   description = 'Plugin generates properties file that can be consumed by Spring Boot Actuator Info endpoint'
   tags = ['build', 'info', 'git', 'spring-boot', 'actuator']
-
-  plugins {
-    buildinfoPlugin {
-      id = 'com.pasam.gradle.buildinfo'
-      displayName = 'Build Info generator plugin for Spring Boot Actuator'
-      description = 'Plugin generates properties file that can be consumed by Spring Boot Actuator Info endpoint'
-    }
-  }
 }

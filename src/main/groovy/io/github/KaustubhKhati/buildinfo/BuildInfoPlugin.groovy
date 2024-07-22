@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-package com.pasam.gradle.buildinfo
-
-import org.gradle.api.Plugin
-import org.gradle.api.Project
-import org.gradle.api.plugins.JavaPlugin
+package io.github.KaustubhKhati.buildinfo
 
 import com.gorylenko.GitPropertiesPlugin
+import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 class BuildInfoPlugin implements Plugin<Project> {
-  @Override
-  void apply(Project project) {
-    if (!project.plugins.hasPlugin(GitPropertiesPlugin)) {
-      project.logger.info('Applying git properties plugin')
-      project.plugins.apply(GitPropertiesPlugin)
-    }
+    @Override
+    void apply(Project project) {
+        if (!project.plugins.hasPlugin(GitPropertiesPlugin)) {
+            project.logger.info('Applying git properties plugin')
+            project.plugins.apply(GitPropertiesPlugin)
+        }
 
-    project.tasks.create(BuildInfoTask.NAME, BuildInfoTask)
-  }
+        project.tasks.create(BuildInfoTask.NAME, BuildInfoTask)
+    }
 }

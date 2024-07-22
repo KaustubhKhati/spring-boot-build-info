@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-package com.pasam.gradle.buildinfo
+package io.github.KaustubhKhati.buildinfo
 
-import java.io.File
-import java.time.Instant
-
-import org.gradle.api.Project
 import org.gradle.api.DefaultTask
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.plugins.JavaPluginConvention
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
+
+import java.time.Instant
 
 class BuildInfoTask extends DefaultTask {
   static final String NAME = 'generateBuildInfo'

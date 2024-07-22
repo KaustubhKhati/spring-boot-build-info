@@ -1,11 +1,11 @@
-THIS IS A FORK CREATED JUST WITH UPDATED VERSION OF gradle-git-properties plugin.
+THIS IS A FORK CREATED JUST WITH UPDATED VERSION OF gradle-git-properties plugin. README IS COPIED FROM THERE.
 
 # Build Info generator Gradle plugin for Spring Boot Actuator
 
 This gradle plugin generates properties file(s) that can be consumed by [Spring Boot Actuator Info endpoint](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-application-info)
 
 -----
-[![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/com.pasam.gradle.buildinfo)
+[![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/io.github.KaustubhKhati.buildinfo)
 [![Build Status](https://travis-ci.org/spasam/spring-boot-build-info.svg?branch=master)](https://travis-ci.org/spasam/spring-boot-build-info)
 -----
 
@@ -29,7 +29,7 @@ Add the following in your `build.gradle plugins` section:
 ```groovy
 plugins {
   ...
-  id 'com.pasam.gradle.buildinfo' version '0.1.3'
+  id 'io.github.KaustubhKhati.buildinfo' version '0.1.3'
   ...
 }
 ```
